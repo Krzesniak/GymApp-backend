@@ -1,0 +1,126 @@
+databaseChangeLog:
+  - changeSet:
+      id: 000_create_diets
+      author: Krzesniak
+      comment: Create table for user diets
+      labels: init, v 0.0.1
+      changes:
+        - createTable:
+            tableName: DIET
+            remarks: Sth
+            columns:
+              - column:
+                  name: ID
+                  type: UUID
+                  remarks: ID
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: DIET_PK
+              - column:
+                  name: USER_ID
+                  type: UUID
+              - column:
+                  name: BREAKFAST_ID
+                  type: UUID
+              - column:
+                  name: SECOND_BREAKFAST_ID
+                  type: UUID
+              - column:
+                  name: MAIN_COURSE_ID
+                  type: UUID
+              - column:
+                  name: DINNER_ID
+                  type: UUID
+              - column:
+                  name: SNACKS_ID
+                  type: UUID
+              - column:
+                  name: DIET_DATE
+                  type: date
+  - changeSet:
+      id: 008_add_foreign_key_constraint_breakfast
+      author: Krzesniak
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: BREAKFAST_ID
+            baseTableName: DIET
+            baseTableSchemaName: public
+            constraintName: BREAKFAST_NUTRIENT_FK
+            deferrable: false
+            initiallyDeferred: false
+            onDelete: CASCADE
+            onUpdate: RESTRICT
+            referencedColumnNames: ID
+            referencedTableName: MEAL
+            referencedTableSchemaName: public
+            validate: true
+  - changeSet:
+      id: 008_add_foreign_key_constraint_second_breakfast
+      author: Krzesniak
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: SECOND_BREAKFAST_ID
+            baseTableName: DIET
+            baseTableSchemaName: public
+            constraintName: SECOND_BREAKFAST_NUTRIENT_FK
+            deferrable: false
+            initiallyDeferred: false
+            onDelete: CASCADE
+            onUpdate: RESTRICT
+            referencedColumnNames: ID
+            referencedTableName: MEAL
+            referencedTableSchemaName: public
+            validate: true
+  - changeSet:
+      id: 008_add_foreign_key_constraint_main_course
+      author: Krzesniak
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: MAIN_COURSE_ID
+            baseTableName: DIET
+            baseTableSchemaName: public
+            constraintName: MAIN_COURSE_NUTRIENT_FK
+            deferrable: false
+            initiallyDeferred: false
+            onDelete: CASCADE
+            onUpdate: RESTRICT
+            referencedColumnNames: ID
+            referencedTableName: MEAL
+            referencedTableSchemaName: public
+            validate: true
+  - changeSet:
+      id: 008_add_foreign_key_constraint_dinner
+      author: Krzesniak
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: DINNER_ID
+            baseTableName: DIET
+            baseTableSchemaName: public
+            constraintName: DINNER_NUTRIENT_FK
+            deferrable: false
+            initiallyDeferred: false
+            onDelete: CASCADE
+            onUpdate: RESTRICT
+            referencedColumnNames: ID
+            referencedTableName: MEAL
+            referencedTableSchemaName: public
+            validate: true
+  - changeSet:
+      id: 008_add_foreign_key_constraint_SNACKS
+      author: Krzesniak
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: SNACKS_ID
+            baseTableName: DIET
+            baseTableSchemaName: public
+            constraintName: SNACKS_NUTRIENT_FK
+            deferrable: false
+            initiallyDeferred: false
+            onDelete: CASCADE
+            onUpdate: RESTRICT
+            referencedColumnNames: ID
+            referencedTableName: MEAL
+            referencedTableSchemaName: public
+            validate: true
+

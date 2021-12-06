@@ -1,0 +1,44 @@
+databaseChangeLog:
+  - changeSet:
+      id: 002_create_user_info
+      author: Krzesniak
+      comment: Create table for user
+      labels: init, v 0.0.1
+      changes:
+        - createTable:
+            tableName: USER_INFO
+            remarks: Sth
+            columns:
+              - column:
+                  name: ID
+                  type: UUID
+                  remarks: ID
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: USER_INFO_PK
+              - column:
+                  name: NAME
+                  type: varchar(256)
+              - column:
+                  name: SURNAME
+                  type: varchar(256)
+              - column:
+                  name: COUNTRY
+                  type: varchar(256)
+              - column:
+                  name: STREET
+                  type: varchar(4096)
+              - column:
+                  name: CITY
+                  type: varchar(256)
+              - column:
+                  name: EMAIL
+                  type: varchar(256)
+              - column:
+                  name: DATE_BIRTH
+                  type: date
+              - column:
+                  name: ENABLED
+                  type: boolean
+

@@ -1,0 +1,26 @@
+ID,NAME,MEAL_NUTRIENT_ID,TYPE,URL_IMAGE,DIFFICULTY
+da969890-abad-48b8-beea-e4276b84034a,Amarantus gotowany,8ad115e4-4b71-4308-9009-28bca9f9c82e,MAIN_COURSE,amarantus_gotowany,EASY
+0cf6e53b-fa06-4c8d-ad72-e74f54d3e91b,Bataty pieczone z tymiankiem,a9b27026-9ad0-464d-93d0-76e16bc1db65,MAIN_COURSE,bataty_pieczone,EASY
+4f6079e9-2dd1-4a08-9a6d-811314e99f9c,Bawarska sałatka z kiełbasa,8e839f02-46a7-4a16-bf53-8da8970c531b,MAIN_COURSE,bawarska_salatka_z_kielbasa,EASY
+22a6f451-c7bf-4fd9-9c7e-19316bfa3ae9,Boeuf Stroganow,c455c856-b1ae-44bb-8046-201df7383b37,MAIN_COURSE,boeuf_stroganow,EASY
+8302318e-c6c3-4299-8cf4-7ffadfeeaad5,Briam - grecka zapiekanka warzywna,eaf32547-aa32-4414-9176-fec8deac050b,MAIN_COURSE,briam,MEDIUM
+774ea498-84a4-43ce-a63b-3f7ee759b121,Bruschetta z ricottą"," wiśniami i szynką parmeńską,61cf06d9-ea0d-4a89-9167-e94afe1ec4de,MAIN_COURSE,bruschetta,MEDIUM
+62fe75bc-c3f8-4305-afe0-886317c8f47f,Buraczki zasmażane,91b8d4c8-c4f2-4a10-bb35-02af8c128761,MAIN_COURSE,buraczki_zasmazane,EASY
+d3c36a39-f066-4b12-adaf-5cdd530492cf,Burrito z kurczakiem,1bcd5315-eff7-44a1-b5ef-6b0f2c8428fb,MAIN_COURSE,burrito_z_kurczakiem,EASY
+d6ad71ea-ce86-4872-95c1-6da348a6e2a5,Caponata,81127435-045a-49a2-966b-f9bb17bd8ab8,MAIN_COURSE,Caponata,EASY
+aab08199-3c17-49a6-97f2-00b5b6b8729a,Cannelloni ze szpinakiem i serem feta,dd061711-cb2e-4015-933a-e74a629b55f5,MAIN_COURSE,cannelloni,HARD
+6a30cfa6-04f8-4693-99b3-cb1653ff9d98,Chow Mein z kurczakiem i warzywami,2353caf7-c77d-4b4d-920c-192929999ad1,MAIN_COURSE,chow_mein,EASY
+0dc98afd-0a3b-46ef-b784-fa849c1e0b1b,Chorwackie gołąbki,0b757bb5-377b-4aa6-8631-da853c75eb13,MAIN_COURSE,chorwackie_golabki,MEDIUM
+133eddc1-134e-4d0f-9f09-ec6564c2134b,Dorada grillowana,f5b54de9-cf64-4b1b-9eae-c6dff0bfaa72,MAIN_COURSE,dorada,EASY
+c6d0beb4-173d-4c1b-83c4-f5674c0dcd22,Dorsz alla Napoletana,906f6904-4e40-4db4-ae25-77ea09f12f37,MAIN_COURSE,dorsz_napoletana,EASY
+dd55e7f8-7872-4295-aff2-77d2027dcc08,Empanadas z mięsem mielonym i chorizo,ce75d775-de5b-49d2-8397-6644e64e54d7,MAIN_COURSE,empanadas,EASY
+7a917d99-1b9c-413a-95cb-fb91ff407ce9,Enchiladas,31678d49-fe1a-4fe4-b658-b49404d1a551,MAIN_COURSE,enchiladas,MEDIUM
+e64f2159-4458-4749-8c66-6a93336c3de6,Ananasowy kurczak Afritada z ryżem,6f534567-2b4d-4c29-80a8-3cec0f2f6ea2,MAIN_COURSE,ananas_kurczak,EASY
+c0360acd-1fc7-4fac-963a-6268823d9630,Bajgiel z grillowaną papryką i cukinią z serem kozim,c0360acd-1fc7-4fac-963a-6268823d9630,BREAKFAST,Bajgiel_z_grillowana_papryka_i_cukinia_z_serem_kozim,EASY
+3f01f73b-9259-4c52-a565-4c6853620b64,Brukselka z Pecorino"," orzechami włoskimi i jajkiem,3f01f73b-9259-4c52-a565-4c6853620b64,BREAKFAST,Brukselka_z_Pecorino_orzechami_wloskimi_i_jajkiem,EASY
+bb394f0a-1782-4ba4-984a-c4075cc046d5,Czarny ryż z malinami i orzechami brazylijskimi,bb394f0a-1782-4ba4-984a-c4075cc046d5,BREAKFAST,Czarny_ryz_z_malinami_i_orzechami_brazylijskmi,MEDIUM
+e5a6429d-6165-44a8-b8f5-9cf7fa992ed7,Gryczanka na mleku z granatem i orzechami włoskimi,e5a6429d-6165-44a8-b8f5-9cf7fa992ed7,BREAKFAST,Gryczanka_na_mleku_z_granatem_i_orzechami,EASY
+0eb4fdbe-40fa-4a2c-9a59-73f454db44cd,Jajecznica z szynką i cebulą,0eb4fdbe-40fa-4a2c-9a59-73f454db44cd,BREAKFAST,Jajecznica_z_szynka_z_indyka_i_cebula,EASY
+58f85d65-9af2-442c-9386-18dad0a8df77,Pannini z kaczką"," burakiem i gorgonzolą,58f85d65-9af2-442c-9386-18dad0a8df77,BREAKFAST,Pannini_z_kaczka_burakiem_i_gorgonzola,HARD
+19eb7bf4-6b8f-4f00-89fa-1560a9c2fc65,Pieczone pączki,19eb7bf4-6b8f-4f00-89fa-1560a9c2fc65,SNACKS,Pieczone_donuts,HARD
+bfbf991e-1d8a-4ec8-a4e2-71a15fad3bbb,Crème brûlée,bfbf991e-1d8a-4ec8-a4e2-71a15fad3bbb,SNACKS,Creme_brulee,EASY

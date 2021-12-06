@@ -1,0 +1,72 @@
+databaseChangeLog:
+  - changeSet:
+      id: 003_create_users
+      author: Krzesniak
+      comment: Create table for user trainings
+      labels: init, v 0.0.1
+      changes:
+        - createTable:
+            tableName: USER_EXERCISES_IN_TRAINING
+            remarks: Sth
+            columns:
+              - column:
+                  name: ID
+                  type: UUID
+                  remarks: ID
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: USER_EXERCISE_TRAINING_ID
+              - column:
+                  name: EXERCISE_ID
+                  type: UUID
+              - column:
+                  name: TRAINING_ID
+                  type: UUID
+              - column:
+                  name: SERIES_NUMBER
+                  type: int
+              - column:
+                  name: WEIGHT
+                  type: int
+              - column:
+                  name: REPETITIONS
+                  type: int
+              - column:
+                  name: DURATION
+                  type: int
+  - changeSet:
+      id: 007_add_foreign_key_constraint_exercise
+      author: Krzesniak
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: EXERCISE_ID
+            baseTableName: USER_EXERCISES_IN_TRAINING
+            baseTableSchemaName: public
+            constraintName: USER_EXERCISE_TRAINING_FK
+            deferrable: false
+            initiallyDeferred: false
+            onDelete: CASCADE
+            onUpdate: RESTRICT
+            referencedColumnNames: ID
+            referencedTableName: EXERCISE
+            referencedTableSchemaName: public
+            validate: true
+  - changeSet:
+      id: 007_add_foreign_key_constraint_training
+      author: Krzesniak
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: TRAINING_ID
+            baseTableName: USER_EXERCISES_IN_TRAINING
+            baseTableSchemaName: public
+            constraintName: USER_TRAINING_FK
+            deferrable: false
+            initiallyDeferred: false
+            onDelete: CASCADE
+            onUpdate: RESTRICT
+            referencedColumnNames: ID
+            referencedTableName: TRAINING
+            referencedTableSchemaName: public
+            validate: true
+

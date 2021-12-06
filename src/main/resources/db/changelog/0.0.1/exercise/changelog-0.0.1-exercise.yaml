@@ -1,0 +1,11 @@
+databaseChangeLog:
+  - include:
+      relativeToChangelogFile: true
+      file: 001_create_exercise.yaml
+  - include:
+      relativeToChangelogFile: true
+      file: 002_create_exercise_hint.yaml
+  - include:
+      relativeToChangelogFile: true
+      file: 003_create_exercise_step.yaml
+

@@ -1,0 +1,33 @@
+databaseChangeLog:
+  - include:
+      relativeToChangelogFile: true
+      file: 000_create_roles.yaml
+  - include:
+      relativeToChangelogFile: true
+      file: 002_create_user_info.yaml
+  - include:
+      relativeToChangelogFile: true
+      file: 003_create_user.yaml
+  - include:
+      relativeToChangelogFile: true
+      file: 004_create_user_roles.yaml
+  - include:
+      relativeToChangelogFile: true
+      file: 005_create_refresh_token.yaml
+  - include:
+      relativeToChangelogFile: true
+      file: 006_user_trainings.yaml
+  - include:
+      relativeToChangelogFile: true
+      file: 007_user_excercies_in_training.yaml
+  - include:
+      relativeToChangelogFile: true
+      file: 008_create_diet.yaml
+  - include:
+      relativeToChangelogFile: true
+      file: 009_create_user_measurement.yaml
+  - include:
+      relativeToChangelogFile: true
+      file: 010_create_verification_token.yaml
+
+

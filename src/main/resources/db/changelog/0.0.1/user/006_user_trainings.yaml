@@ -1,0 +1,60 @@
+databaseChangeLog:
+  - changeSet:
+      id: 003_create_users
+      author: Krzesniak
+      comment: Create table for user trainings
+      labels: init, v 0.0.1
+      changes:
+        - createTable:
+            tableName: TRAINING
+            remarks: Sth
+            columns:
+              - column:
+                  name: ID
+                  type: UUID
+                  remarks: ID
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: TRAINING_ID
+              - column:
+                  name: USER_ID
+                  type: UUID
+              - column:
+                  name: NAME
+                  type: varchar(4096)
+              - column:
+                  name: DATE
+                  type: datetime
+              - column:
+                  name: DURATION
+                  type: TIME
+              - column:
+                  name: TRAINING_TYPE
+                  type: varchar(256)
+              - column:
+                  name: DESCRIPTION
+                  type: varchar(4096)
+              - column:
+                  name: NOTE
+                  type: varchar(2048)
+              - column:
+                  name: URL_IMAGE
+                  type: varchar(256)
+  - changeSet:
+      id: 006_add_foreign_key_constraint_user
+      author: Krzesniak
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: USER_ID
+            baseTableName: TRAINING
+            baseTableSchemaName: public
+            constraintName: TRAINING_USER_FK
+            deferrable: false
+            initiallyDeferred: false
+            onDelete: CASCADE
+            onUpdate: RESTRICT
+            referencedColumnNames: ID
+            referencedTableName: USER
+            referencedTableSchemaName: public
+            validate: true

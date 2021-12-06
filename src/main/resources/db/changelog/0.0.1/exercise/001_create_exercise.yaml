@@ -1,0 +1,34 @@
+databaseChangeLog:
+  - changeSet:
+      id: 001_create_exercise
+      author: Krzesniak
+      comment: Create table exercise
+      labels: init, v 0.0.1
+      changes:
+        - createTable:
+            tableName: EXERCISE
+            remarks: Sth
+            columns:
+              - column:
+                  name: ID
+                  type: UUID
+                  remarks: ID
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: exercise_PK
+              - column:
+                  name: NAME
+                  type: varchar(256)
+              - column:
+                  name: URL_MOVIE
+                  type: varchar(256)
+              - column:
+                  name: URL_IMAGE
+                  type: varchar(256)
+              - column:
+                  name: DIFFICULTY
+                  type: varchar(128)
+              - column:
+                  name: TYPE
+                  type: varchar(128)

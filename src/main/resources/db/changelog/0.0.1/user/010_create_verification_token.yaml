@@ -1,0 +1,42 @@
+databaseChangeLog:
+  - changeSet:
+      id: 010_create_verification_token
+      author: Krzesniak
+      comment: Create table for user roles
+      labels: init, v 0.0.1
+      changes:
+        - createTable:
+            tableName: VERIFICATION_TOKEN
+            remarks: Sth
+            columns:
+              - column:
+                  name: ID
+                  type: UUID
+                  remarks: ID
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: VERIFICATION_TOKEN_PK
+              - column:
+                  name: TOKEN
+                  type: UUID
+              - column:
+                  name: USER_ID
+                  type: UUID
+  - changeSet:
+      id: 010_add_foreign_key_constraint_user_fk
+      author: Krzesniak
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: USER_ID
+            baseTableName: VERIFICATION_TOKEN
+            baseTableSchemaName: public
+            constraintName: VERIFICATION_TOKEN_USER_FK
+            deferrable: false
+            initiallyDeferred: false
+            onDelete: CASCADE
+            onUpdate: RESTRICT
+            referencedColumnNames: ID
+            referencedTableName: USER
+            referencedTableSchemaName: public
+            validate: true

@@ -1,0 +1,67 @@
+databaseChangeLog:
+  - changeSet:
+      id: 004_create_user_roles
+      author: Krzesniak
+      comment: Create table for user roles
+      labels: init, v 0.0.1
+      changes:
+        - createTable:
+            tableName: USER_ROLES
+            remarks: Sth
+            columns:
+              - column:
+                  name: USER_ID
+                  type: uuid
+                  constraints:
+                      nullable: false
+              - column:
+                  name: ROLE_ID
+                  type: uuid
+                  constraints:
+                      nullable: false
+  - changeSet:
+      id: 004_add_primary_key
+      author: Krzesniak
+      changes:
+        - addPrimaryKey:
+            clustered: true
+            columnNames: USER_ID, ROLE_ID
+            constraintName: USER_ROLE_PK
+            schemaName: public
+            tableName: USER_ROLES
+            validate: true
+  - changeSet:
+      id: 004_add_foreign_key_constraint_user
+      author: Krzesniak
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: USER_ID
+            baseTableName: USER_ROLES
+            baseTableSchemaName: public
+            constraintName: MULTI_USER_ROLE_FK
+            deferrable: false
+            initiallyDeferred: false
+            onDelete: CASCADE
+            onUpdate: RESTRICT
+            referencedColumnNames: ID
+            referencedTableName: USER
+            referencedTableSchemaName: public
+            validate: true
+  - changeSet:
+      id: 004_add_foreign_key_constraint_role
+      author: Krzesniak
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: ROLE_ID
+            baseTableName: USER_ROLES
+            baseTableSchemaName: public
+            constraintName: MULTI_ROLE_USER_FK
+            deferrable: false
+            initiallyDeferred: false
+            onDelete: CASCADE
+            onUpdate: RESTRICT
+            referencedColumnNames: ID
+            referencedTableName: ROLE
+            referencedTableSchemaName: public
+            validate: true
+

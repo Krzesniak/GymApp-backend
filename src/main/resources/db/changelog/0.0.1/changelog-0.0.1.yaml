@@ -1,0 +1,10 @@
+databaseChangeLog:
+  - include:
+      relativeToChangelogFile: true
+      file: exercise/changelog-0.0.1-exercise.yaml
+  - include:
+      relativeToChangelogFile: true
+      file: diet/changelog-0.0.1-diet.yaml
+  - include:
+      relativeToChangelogFile: true
+      file: user/changelog-0.0.1-user.yaml

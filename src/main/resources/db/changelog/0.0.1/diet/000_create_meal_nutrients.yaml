@@ -1,0 +1,34 @@
+databaseChangeLog:
+  - changeSet:
+      id: 000_create_meal_nutrients
+      author: Krzesniak
+      comment: Create table meal nutrients
+      labels: init, v 0.0.1
+      changes:
+        - createTable:
+            tableName: MEAL_NUTRIENT
+            remarks: Sth
+            columns:
+              - column:
+                  name: ID
+                  type: UUID
+                  remarks: ID
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: MEAL_NUTRIENTS_PK
+              - column:
+                  name: CALORIES
+                  type: int
+              - column:
+                  name: PROTEIN
+                  type: int
+              - column:
+                  name: CARBOHYDRATE
+                  type: int
+              - column:
+                  name: FAT
+                  type: int
+              - column:
+                  name: FIBER
+                  type: int

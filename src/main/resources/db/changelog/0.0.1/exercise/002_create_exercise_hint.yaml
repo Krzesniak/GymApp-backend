@@ -1,0 +1,43 @@
+databaseChangeLog:
+  - changeSet:
+      id: 002_create_exercise_hint
+      author: Krzesniak
+      comment: Create table exercise
+      labels: init, v 0.0.1
+      changes:
+        - createTable:
+            tableName: EXERCISE_HINT
+            remarks: Sth
+            columns:
+              - column:
+                  name: ID
+                  type: UUID
+                  remarks: ID
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: exercise_hint_PK
+              - column:
+                  name: HINT
+                  type: varchar(4096)
+              - column:
+                   name: EXERCISE_ID
+                   type: UUID
+  - changeSet:
+      id: 004_add_foreign_key_constraint_exercise
+      author: Krzesniak
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: EXERCISE_ID
+            baseTableName: EXERCISE_HINT
+            baseTableSchemaName: public
+            constraintName: EXERCISE_HINT_ID_FK
+            deferrable: false
+            initiallyDeferred: false
+            onDelete: CASCADE
+            onUpdate: RESTRICT
+            referencedColumnNames: ID
+            referencedTableName: EXERCISE
+            referencedTableSchemaName: public
+            validate: true
+

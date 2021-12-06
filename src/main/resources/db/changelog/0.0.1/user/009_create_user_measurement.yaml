@@ -1,0 +1,72 @@
+databaseChangeLog:
+  - changeSet:
+      id: 009_create_user_measurement
+      author: Krzesniak
+      comment: Create table for user measurement
+      labels: init, v 0.0.1
+      changes:
+        - createTable:
+            tableName: USER_MEASUREMENT
+            remarks: Sth
+            columns:
+              - column:
+                  name: ID
+                  type: UUID
+                  remarks: ID
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: USER_MEASUREMENT_ID
+              - column:
+                  name: USER_ID
+                  type: UUID
+              - column:
+                  name: NECK
+                  type: DOUBLE
+              - column:
+                  name: ARM
+                  type: DOUBLE
+              - column:
+                  name: FOREHAND
+                  type: DOUBLE
+              - column:
+                  name: WRIST
+                  type: DOUBLE
+              - column:
+                  name: CHEST
+                  type: DOUBLE
+              - column:
+                  name: WAIST
+                  type: DOUBLE
+              - column:
+                  name: THIGH
+                  type: DOUBLE
+              - column:
+                  name: CALF
+                  type: DOUBLE
+              - column:
+                  name: WEIGHT
+                  type: DOUBLE
+              - column:
+                  name: HEIGHT
+                  type: DOUBLE
+              - column:
+                  name: DATE
+                  type: DATE
+  - changeSet:
+      id: 009_add_foreign_key_constraint_user_id
+      author: Krzesniak
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: USER_ID
+            baseTableName: USER_MEASUREMENT
+            baseTableSchemaName: public
+            constraintName: USER_ID_USER_MEASUREMENT_FK
+            deferrable: false
+            initiallyDeferred: false
+            onDelete: CASCADE
+            onUpdate: RESTRICT
+            referencedColumnNames: ID
+            referencedTableName: USER
+            referencedTableSchemaName: public
+            validate: true

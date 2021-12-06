@@ -1,0 +1,75 @@
+databaseChangeLog:
+  - changeSet:
+      id: 004_create_meal_ingredient
+      author: Krzesniak
+      comment: Create table ingredient
+      labels: init, v 0.0.1
+      changes:
+        - createTable:
+            tableName: MEAL_INGREDIENT
+            remarks: Sth
+            columns:
+              - column:
+                  name: MEAL_ID
+                  constraints:
+                    nullable: false
+                  type: UUID
+              - column:
+                  name: INGREDIENT_ID
+                  constraints:
+                    nullable: false
+                  type: UUID
+              - column:
+                  name: PRECISE_AMOUNT
+                  type: int
+              - column:
+                  name: AMOUNT_OVERALL
+                  type: varchar(256)
+              - column:
+                  name: MEASURE_UNIT
+                  type: varchar(256)
+  - changeSet:
+      id: 004_add_primary_key
+      author: Krzesniak
+      changes:
+        - addPrimaryKey:
+            clustered: true
+            columnNames: MEAL_ID, INGREDIENT_ID
+            constraintName: MEAL_INGREDIENT_PK
+            schemaName: public
+            tableName: MEAL_INGREDIENT
+            validate: true
+  - changeSet:
+      id: 004_xadd_foreign_key_constraint_meal
+      author: Krzesniak
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: MEAL_ID
+            baseTableName: MEAL_INGREDIENT
+            baseTableSchemaName: public
+            constraintName: MULTI_MEAL_INGREDIENT_FK
+            deferrable: false
+            initiallyDeferred: false
+            onDelete: CASCADE
+            onUpdate: RESTRICT
+            referencedColumnNames: ID
+            referencedTableName: MEAL
+            referencedTableSchemaName: public
+            validate: true
+  - changeSet:
+      id: 004_xadd_foreign_key_constraint_ingredient
+      author: Krzesniak
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: INGREDIENT_ID
+            baseTableName: MEAL_INGREDIENT
+            baseTableSchemaName: public
+            constraintName: MULTI_INGREDIENT_MEAL_FK
+            deferrable: false
+            initiallyDeferred: false
+            onDelete: CASCADE
+            onUpdate: RESTRICT
+            referencedColumnNames: ID
+            referencedTableName: INGREDIENT
+            referencedTableSchemaName: public
+            validate: true

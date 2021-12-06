@@ -1,0 +1,25 @@
+databaseChangeLog:
+  - changeSet:
+      id: 005_create_refresh_toekn
+      author: Krzesniak
+      comment: Create table for user roles
+      labels: init, v 0.0.1
+      changes:
+        - createTable:
+            tableName: REFRESH_TOKEN
+            remarks: Sth
+            columns:
+              - column:
+                  name: ID
+                  type: UUID
+                  remarks: ID
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: REFRESH_TOKEN_ID
+              - column:
+                  name: CREATED_DATE
+                  type: date
+              - column:
+                  name: TOKEN
+                  type: uuid

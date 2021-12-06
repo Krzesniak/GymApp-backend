@@ -1,0 +1,13 @@
+{
+  "properties": [
+    {
+      "name": "path.image.url.avatar",
+      "type": "java.lang.String",
+      "description": "Description for path.image.url.avatar."
+    },
+    {
+      "name": "path.image.url.avatar",
+      "type": "java.lang.String",
+      "description": "Description for path.image.url.avatar."
+    }
+  ] }

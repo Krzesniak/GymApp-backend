@@ -1,0 +1,18 @@
+databaseChangeLog:
+  - include:
+      relativeToChangelogFile: true
+      file: 000_create_meal_nutrients.yaml
+  - include:
+      relativeToChangelogFile: true
+      file: 001_create_meal.yaml
+  - include:
+      relativeToChangelogFile: true
+      file: 002_create_recipe.yaml
+  - include:
+      relativeToChangelogFile: true
+      file: 003_create_ingredient.yaml
+  - include:
+      relativeToChangelogFile: true
+      file: 004_create_meal_ingredient.yaml
+
+

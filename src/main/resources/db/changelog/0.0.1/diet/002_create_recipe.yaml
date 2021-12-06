@@ -1,0 +1,45 @@
+databaseChangeLog:
+  - changeSet:
+      id: 002_create_recipe_steps
+      author: Krzesniak
+      comment: Create table exercise
+      labels: init, v 0.0.1
+      changes:
+        - createTable:
+            tableName: RECIPE_STEPS
+            remarks: Sth
+            columns:
+              - column:
+                  name: ID
+                  type: UUID
+                  remarks: ID
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: RECIPE_STEPS_PK
+              - column:
+                  name: MEAL_ID
+                  type: UUID
+              - column:
+                  name: ROW_NUMBER
+                  type: int
+              - column:
+                  name: INSTRUCTION_STEP
+                  type: varchar(4096)
+  - changeSet:
+      id: 002_add_foreign_key_constraint_meal
+      author: Krzesniak
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: MEAL_ID
+            baseTableName: RECIPE_STEPS
+            baseTableSchemaName: public
+            constraintName: MEAL_FK
+            deferrable: false
+            initiallyDeferred: false
+            onDelete: CASCADE
+            onUpdate: RESTRICT
+            referencedColumnNames: ID
+            referencedTableName: MEAL
+            referencedTableSchemaName: public
+            validate: true

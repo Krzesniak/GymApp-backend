@@ -1,0 +1,52 @@
+databaseChangeLog:
+  - changeSet:
+      id: 001_create_diet
+      author: Krzesniak
+      comment: Create table exercise
+      labels: init, v 0.0.1
+      changes:
+        - createTable:
+            tableName: MEAL
+            remarks: Sth
+            columns:
+              - column:
+                  name: ID
+                  type: UUID
+                  remarks: ID
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: MEAL_PK
+              - column:
+                  name: NAME
+                  type: varchar(256)
+              - column:
+                  name: MEAL_NUTRIENT_ID
+                  type: UUID
+              - column:
+                  name: TYPE
+                  type: varchar(256)
+              - column:
+                  name: URL_IMAGE
+                  type: varchar(256)
+              - column:
+                  name: DIFFICULTY
+                  type: varchar(128)
+
+  - changeSet:
+      id: 001_add_foreign_key_constraint_meal
+      author: Krzesniak
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: MEAL_NUTRIENT_ID
+            baseTableName: MEAL
+            baseTableSchemaName: public
+            constraintName: MEAL_NUTRIENT_FK
+            deferrable: false
+            initiallyDeferred: false
+            onDelete: CASCADE
+            onUpdate: RESTRICT
+            referencedColumnNames: ID
+            referencedTableName: MEAL_NUTRIENT
+            referencedTableSchemaName: public
+            validate: true

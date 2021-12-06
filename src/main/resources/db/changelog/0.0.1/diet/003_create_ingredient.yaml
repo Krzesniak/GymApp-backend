@@ -1,0 +1,22 @@
+databaseChangeLog:
+  - changeSet:
+      id: 003_create_ingredient
+      author: Krzesniak
+      comment: Create table ingredient
+      labels: init, v 0.0.1
+      changes:
+        - createTable:
+            tableName: Ingredient
+            remarks: Sth
+            columns:
+              - column:
+                  name: ID
+                  type: UUID
+                  remarks: ID
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: INGREDIENT_PK
+              - column:
+                  name: NAME
+                  type: varchar(256)

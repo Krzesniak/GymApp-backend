@@ -1,0 +1,22 @@
+databaseChangeLog:
+  - changeSet:
+      id: 000_create_roles
+      author: Krzesniak
+      comment: Create table for user roles
+      labels: init, v 0.0.1
+      changes:
+        - createTable:
+            tableName: ROLE
+            remarks: Sth
+            columns:
+              - column:
+                  name: ID
+                  type: UUID
+                  remarks: ID
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: ROLE_PK
+              - column:
+                  name: NAME
+                  type: varchar(256)

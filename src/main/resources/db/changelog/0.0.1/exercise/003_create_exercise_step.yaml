@@ -1,0 +1,46 @@
+databaseChangeLog:
+  - changeSet:
+      id: 003_create_exercise_step
+      author: Krzesniak
+      comment: Create table exercise
+      labels: init, v 0.0.1
+      changes:
+        - createTable:
+            tableName: EXERCISE_STEP
+            remarks: Sth
+            columns:
+              - column:
+                  name: ID
+                  type: UUID
+                  remarks: ID
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: exercise_step_PK
+              - column:
+                  name: STEP_NUMBER
+                  type: int
+              - column:
+                  name: EXERCISE_ID
+                  type: UUID
+              - column:
+                  name: EXERCISE_STEP
+                  type: varchar(4096)
+  - changeSet:
+      id: 003_add_foreign_key_constraint_exercise_step
+      author: Krzesniak
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: EXERCISE_ID
+            baseTableName: EXERCISE_HINT
+            baseTableSchemaName: public
+            constraintName: EXERCISE_STEP_ID_FK
+            deferrable: false
+            initiallyDeferred: false
+            onDelete: CASCADE
+            onUpdate: RESTRICT
+            referencedColumnNames: ID
+            referencedTableName: EXERCISE
+            referencedTableSchemaName: public
+            validate: true
+

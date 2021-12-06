@@ -1,0 +1,8 @@
+ID,USER_ID,NAME,DATE,DURATION,TRAINING_TYPE,URL_IMAGE,DESCRIPTION,NOTE
+612e8ca0-b460-496f-907b-cc2abe997445,c9b5f406-599f-4e4b-b7c8-12b1d5eb2fea,Trening Siłowy,2021-10-19 17:00:00,01:30:00,SPLIT,split,Proszę się głównie skupić na poprawnym i dokładnym wykonywaniu ćwiczeń. Skoncentrować się na wolnym opuszczeniu ciężarów,Koci grzbiet przy wykonywaniu martwego ciągu
+612e8ca0-b460-496f-907b-ac2abe997445,c9b5f406-599f-4e4b-b7c8-12b1d5eb2fea,Lekki trening,2021-10-25 17:00:00,01:45:00,FBW,fbw,Główny nacisk proszę postawić na nogi,Odpoczynek pomiędzy seriami 15 minut
+4a8d0566-fb6a-4eb7-bef1-0053b853101d,c9b5f406-599f-4e4b-b7c8-12b1d5eb2fea,Trening po przerwie,2021-11-02 17:00:00,01:20:00,SPLIT,split,Brak,Długa rozgrzewka po przerwie
+a6b998aa-2f6c-4b06-b345-09e9eb6e4130,c9b5f406-599f-4e4b-b7c8-12b1d5eb2fea,Trening wersja 2,2021-11-06 17:00:00,01:50:00,SPLIT,split,Brak,Brak
+56370e10-3e2f-4cfd-8510-a7ac34d6ac77,c9b5f406-599f-4e4b-b7c8-12b1d5eb2fea,Aerobik,2021-11-10 17:00:00,00:40:00,FBW,fbw,Ćwiczenia na gumie, Pamietać o prawidłowym doborze grubości gumy do ciężąru
+029d2c4d-9c3b-4de3-a4d4-c6711cb61aed,c9b5f406-599f-4e4b-b7c8-12b1d5eb2fea,Trening pleców,2021-11-14 17:00:00,01:20:00,SPLIT,split,Brak,Brak
+e2573445-02f7-4a96-a0ea-52b5a5911852,c9b5f406-599f-4e4b-b7c8-12b1d5eb2fea,Trening klatki,2021-11-21 17:00:00,01:30:00,SPLIT,split,Brak,Brak
