@@ -2,10 +2,9 @@ package pl.krzesniak.gymapp.services;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-import pl.krzesniak.gymapp.entities.RefreshToken;
+import pl.krzesniak.gymapp.entities.user.RefreshToken;
 import pl.krzesniak.gymapp.repositories.RefreshTokenRepository;
 
-import java.time.Instant;
 import java.time.LocalDate;
 import java.util.UUID;
 

@@ -1,7 +1,7 @@
 package pl.krzesniak.gymapp.repositories;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import pl.krzesniak.gymapp.entities.VerificationToken;
+import pl.krzesniak.gymapp.entities.user.VerificationToken;
 
 import java.util.Optional;
 import java.util.UUID;

@@ -13,7 +13,7 @@ import java.util.List;
 public class TrainingRequestDTO {
     private LocalDate date;
     private LocalTime hour;
-    private String duration;
+    private LocalTime duration;
     private String name;
     private String trainingType;
     private String description;

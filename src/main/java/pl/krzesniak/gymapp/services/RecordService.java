@@ -4,16 +4,13 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import pl.krzesniak.gymapp.dto.MonthRecordExerciseDTO;
 import pl.krzesniak.gymapp.dto.RecordExercisesDTO;
-import pl.krzesniak.gymapp.dto.records.MaximumRecordsDTO;
-import pl.krzesniak.gymapp.entities.ExerciseInTraining;
-import pl.krzesniak.gymapp.entities.Training;
+import pl.krzesniak.gymapp.entities.training.ExerciseInTraining;
 import pl.krzesniak.gymapp.mappers.RecordMapper;
 import pl.krzesniak.gymapp.record.RecordMaximumFinder;
 import pl.krzesniak.gymapp.repositories.ExercisesInTrainingRepository;
 
 import javax.transaction.Transactional;
 import java.time.LocalDate;
-import java.time.Month;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Map;

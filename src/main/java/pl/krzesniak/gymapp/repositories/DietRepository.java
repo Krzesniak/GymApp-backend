@@ -4,8 +4,8 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
-import pl.krzesniak.gymapp.entities.Diet;
-import pl.krzesniak.gymapp.entities.User;
+import pl.krzesniak.gymapp.entities.diet.Diet;
+import pl.krzesniak.gymapp.entities.user.User;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -27,4 +27,6 @@ public interface DietRepository extends JpaRepository<Diet, UUID> {
     List<Diet> findByUsernameAndDate(@Param("username") UUID username,
                                      @Param("startDate") LocalDate startDate,
                                      @Param("endDate") LocalDate endDate);
+
+    List<Diet> findByUser(User user);
 }

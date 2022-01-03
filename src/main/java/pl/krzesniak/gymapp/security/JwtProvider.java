@@ -7,15 +7,13 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.stereotype.Component;
-import pl.krzesniak.gymapp.entities.RefreshToken;
-import pl.krzesniak.gymapp.entities.User;
+import pl.krzesniak.gymapp.entities.user.RefreshToken;
+import pl.krzesniak.gymapp.entities.user.User;
 import pl.krzesniak.gymapp.exceptions.NotFoundUserException;
 import pl.krzesniak.gymapp.repositories.UserRepository;
 import pl.krzesniak.gymapp.services.RefreshTokenService;
 
 import java.time.Instant;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.List;
 import java.util.UUID;

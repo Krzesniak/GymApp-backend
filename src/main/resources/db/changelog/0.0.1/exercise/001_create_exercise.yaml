@@ -32,3 +32,12 @@ databaseChangeLog:
               - column:
                   name: TYPE
                   type: varchar(128)
+              - column:
+                  name: ENABLED
+                  type: BOOLEAN
+              - column:
+                  name: CREATED_BY
+                  type: varchar(128)
+              - column:
+                  name: CREATED_DATE
+                  type: DATE

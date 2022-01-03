@@ -3,12 +3,9 @@ package pl.krzesniak.gymapp.services;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import pl.krzesniak.gymapp.dto.meals.IngredientFilterDTO;
-import pl.krzesniak.gymapp.entities.Ingredient;
 import pl.krzesniak.gymapp.mappers.IngredientMapper;
 import pl.krzesniak.gymapp.repositories.IngredientRepository;
-import pl.krzesniak.gymapp.repositories.filters.ExerciseFilter;
 import pl.krzesniak.gymapp.repositories.filters.IngredientFilter;
-import pl.krzesniak.gymapp.repositories.specification.ExerciseSpecification;
 import pl.krzesniak.gymapp.repositories.specification.IngredientSpecification;
 
 import java.util.List;

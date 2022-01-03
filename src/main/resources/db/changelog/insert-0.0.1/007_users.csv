@@ -1,5 +1,5 @@
 ID,USERNAME,PASSWORD,EMAIL,ENABLED,URL_IMAGE,USER_INFO_ID
-c9b5f406-599f-4e4b-b7c8-12b1d5eb2fea,peterczak,$2a$10$mrGkGDaZ6182E/HlDnxvJexAzlbNO4TcpPf4Y.B86yFKdYsJ.aEje,email@wp.pl,true,none,8f9f3d8b-0dd5-4863-9b9a-e6f70d6057cd
-9b906fa4-9959-42da-a1fc-e6a19ca2bb71,peterczak2,$2a$10$mrGkGDaZ6182E/HlDnxvJexAzlbNO4TcpPf4Y.B86yFKdYsJ.aEje,email@wp.pl,true,none,8f9f3d8b-0dd5-4863-9b9a-e6f70d6057ca
+c9b5f406-599f-4e4b-b7c8-12b1d5eb2fea,peterczak,$2a$10$mrGkGDaZ6182E/HlDnxvJexAzlbNO4TcpPf4Y.B86yFKdYsJ.aEje,email@wp.pl,true,https://krzesniakowo.blob.core.windows.net/avatars/avatar.jpg,8f9f3d8b-0dd5-4863-9b9a-e6f70d6057cd
+9b906fa4-9959-42da-a1fc-e6a19ca2bb71,peterczak2,$2a$10$mrGkGDaZ6182E/HlDnxvJexAzlbNO4TcpPf4Y.B86yFKdYsJ.aEje,email@wp.pl,true,https://krzesniakowo.blob.core.windows.net/avatars/avatar1.png,8f9f3d8b-0dd5-4863-9b9a-e6f70d6057ca
 
 

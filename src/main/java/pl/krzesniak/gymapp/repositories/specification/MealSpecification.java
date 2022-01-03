@@ -2,7 +2,7 @@ package pl.krzesniak.gymapp.repositories.specification;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.jpa.domain.Specification;
-import pl.krzesniak.gymapp.entities.Meal;
+import pl.krzesniak.gymapp.entities.diet.Meal;
 import pl.krzesniak.gymapp.repositories.filters.MealFilter;
 
 import javax.persistence.criteria.CriteriaBuilder;
@@ -20,11 +20,12 @@ public class MealSpecification implements Specification<Meal> {
 
     @Override
     public Predicate toPredicate(Root<Meal> root, CriteriaQuery<?> criteriaQuery, CriteriaBuilder criteriaBuilder) {
-        Predicate[] predicates = new Predicate[3];
+        Predicate[] predicates = new Predicate[4];
         if (isSearchStringValid()) predicates[0] = createPredicateForSearchString(root, criteriaQuery, criteriaBuilder);
         if (mealFilter.getMealType() != null) predicates[1] = createPredicateForMealType(root, criteriaBuilder);
         if (mealFilter.getMealDifficulty() != null)
             predicates[2] = createPredicateForMealDifficulty(root, criteriaBuilder);
+        predicates[3] = createPredicateIsEnabled(root, criteriaQuery, criteriaBuilder);
         Predicate[] filterPredicates = Arrays.stream(predicates)
                 .filter(Objects::nonNull)
                 .toArray(Predicate[]::new);
@@ -46,6 +47,9 @@ public class MealSpecification implements Specification<Meal> {
                 criteriaBuilder.lower(
                         root.get("name")),
                 "%" + mealFilter.getSearchString() + "%");
+    }
+    private Predicate createPredicateIsEnabled(Root<Meal> root, CriteriaQuery<?> criteriaQuery, CriteriaBuilder criteriaBuilder) {
+        return criteriaBuilder.equal(root.get("enabled"), true);
     }
 
     private boolean isSearchStringValid() {

@@ -3,18 +3,13 @@ package pl.krzesniak.gymapp.mappers;
 import org.mapstruct.*;
 import pl.krzesniak.gymapp.dto.DietDayDTO;
 import pl.krzesniak.gymapp.dto.IngredientDetailsDTO;
-import pl.krzesniak.gymapp.dto.meals.MealDetailsDTO;
-import pl.krzesniak.gymapp.dto.meals.MealHeaderDTO;
+import pl.krzesniak.gymapp.dto.meals.*;
 import pl.krzesniak.gymapp.dto.MealWithTotalPagesDTO;
-import pl.krzesniak.gymapp.dto.meals.MealNutrientsDTO;
-import pl.krzesniak.gymapp.dto.meals.RecipeStepsDTO;
-import pl.krzesniak.gymapp.entities.Diet;
-import pl.krzesniak.gymapp.entities.Meal;
-import pl.krzesniak.gymapp.entities.MealIngredient;
-import pl.krzesniak.gymapp.entities.MealNutrient;
+import pl.krzesniak.gymapp.entities.diet.*;
 import pl.krzesniak.gymapp.enums.MealDifficulty;
 import pl.krzesniak.gymapp.enums.MealType;
 
+import java.time.LocalDate;
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -75,4 +70,53 @@ public interface MealMapper {
                 .collect(Collectors.toList());
     }
 
+    default Meal mapToMealEntity(CreateMealRequestDTO createMealRequestDTO, List<Ingredient> ingredients, String name){
+        Meal meal = new Meal();
+        meal.setName(createMealRequestDTO.getName());
+        meal.setMealDifficulty(createMealRequestDTO.getMealDifficulty());
+        meal.setType(createMealRequestDTO.getMealType());
+        meal.setUrlImage(createMealRequestDTO.getUrlImage());
+        MealNutrient mealNutrient = new MealNutrient();
+        mealNutrient.setCalories(createMealRequestDTO.getCalories());
+        mealNutrient.setCarbohydrate(createMealRequestDTO.getCarbohydrate());
+        mealNutrient.setFat(createMealRequestDTO.getFat());
+        mealNutrient.setFiber(createMealRequestDTO.getFiber());
+        mealNutrient.setProtein(createMealRequestDTO.getProtein());
+        meal.setMealNutrient(mealNutrient);
+        meal.setEnabled(false);
+        meal.setCreatedDate(LocalDate.now());
+        meal.setCreatedBy(name);
+        Set<RecipeSteps> recipeSteps = new HashSet<>();
+        for(int i=0; i<createMealRequestDTO.getRecipeSteps().size(); i++){
+            RecipeSteps recipeStep = new RecipeSteps();
+            recipeStep.setRowNumber(i+1);
+            recipeStep.setInstructionStep(createMealRequestDTO.getRecipeSteps().get(i).getName());
+            recipeSteps.add(recipeStep);
+        }
+        meal.setRecipeSteps(recipeSteps);
+        Set<MealIngredient> mealIngredients = createMealRequestDTO.getMealIngredients().stream()
+                .map(ingredient -> {
+                    Ingredient foundIngredient = ingredients.stream()
+                            .filter(ing -> ing.getName().equals(ingredient.getName()))
+                            .findFirst()
+                            .orElseThrow(UnsupportedOperationException::new);
+                    MealIngredient mealIngredient = new MealIngredient();
+                    mealIngredient.setMeal(meal);
+                    mealIngredient.setIngredient(foundIngredient);
+                    mealIngredient.setAmountOverall(ingredient.getAmountOverall());
+                    mealIngredient.setMeasureUnit(ingredient.getMeasureUnit());
+                    mealIngredient.setPreciseAmount(ingredient.getPreciseAmount());
+                    MealIngredient.Id id = new MealIngredient.Id();
+                    id.setIngredientID(foundIngredient.getId());
+                    mealIngredient.setId(id);
+                    return mealIngredient;
+                })
+                .collect(Collectors.toSet());
+
+        meal.setMealIngredients(mealIngredients);
+        return meal;
+    }
+
+    @Mapping(target = "mealID", source = "id")
+    MealsNotVerifiedDTO mapToNotVerifiedMeal(Meal meal);
 }

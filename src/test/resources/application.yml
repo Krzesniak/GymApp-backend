@@ -1,0 +1,47 @@
+spring:
+  h2:
+    console:
+      enabled: true
+      path: /h2
+  datasource:
+    url: jdbc:h2:file:~/test2
+    username: sa
+    password: sa
+    driverClassName: org.h2.Driver
+  jpa:
+    hibernate:
+      ddl-auto: none
+    properties:
+      hibernate:
+        format_sql: true
+  servlet:
+    multipart:
+      max-file-size: 20MB
+      max-request-size: 20MB
+  mail:
+    host: smtp.mailtrap.io
+    port: 2525
+    username: e6bb97a0cf1f21
+    password: b5244eea5812a3
+logging:
+  level:
+    org:
+      hibernate:
+        SQL: debug
+jwt:
+  token:
+    expiration: 10
+    key: Axzqwe2ewfds2FGJsDlSDKEWQESJSEScxKGQWEJDSAMWEJSLDQORKSDAxzqwe2ewfds2FGJsDlSDKEWQESJSEScxKGQWEJDSAMWEJSLDQORKSD
+azure:
+  storage:
+    account-name: krzesniakowo
+    account-key: 25lw//dy4LGB6PuGf8Ft6PqWwCcKycGJT94ns6FQMeAJ+vvSswesJUsQtn2gn/otjKWtcAa4VyZk6Z+4Y2Eb4w==
+    blob-endpoint: https://krzesniakowo.blob.core.windows.net/
+
+path:
+  image:
+    url:
+      avatar: C:\Inzynier\img\avatars\
+
+
+

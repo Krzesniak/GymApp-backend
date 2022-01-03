@@ -6,7 +6,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
-import pl.krzesniak.gymapp.entities.User;
+import pl.krzesniak.gymapp.entities.user.User;
 import pl.krzesniak.gymapp.exceptions.NotFoundUserException;
 import pl.krzesniak.gymapp.repositories.UserRepository;
 

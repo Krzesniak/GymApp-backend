@@ -14,7 +14,6 @@ public class MailService {
 
     private final MailConfiguration mailConfiguration;
     private final JavaMailSender javaMailSender;
-    private final MailContentBuilder mailContentBuilder;
 
     @Async
     public void sendMail(EmailDTO emailDTO){

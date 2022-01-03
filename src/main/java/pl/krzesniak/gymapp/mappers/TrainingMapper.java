@@ -1,7 +1,5 @@
 package pl.krzesniak.gymapp.mappers;
 
-import org.hibernate.annotations.Source;
-import org.hibernate.annotations.Target;
 import org.mapstruct.*;
 import pl.krzesniak.gymapp.dto.ExerciseResultDTO;
 import pl.krzesniak.gymapp.dto.ResultDTO;
@@ -9,9 +7,11 @@ import pl.krzesniak.gymapp.dto.TrainingDTO;
 import pl.krzesniak.gymapp.dto.TrainingDetailsDTO;
 import pl.krzesniak.gymapp.dto.exercises.TrainingExerciseHeaderDTO;
 import pl.krzesniak.gymapp.dto.exercises.TrainingRequestDTO;
-import pl.krzesniak.gymapp.entities.*;
+import pl.krzesniak.gymapp.entities.training.Exercise;
+import pl.krzesniak.gymapp.entities.training.ExerciseInTraining;
+import pl.krzesniak.gymapp.entities.training.Training;
+import pl.krzesniak.gymapp.entities.user.User;
 
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;

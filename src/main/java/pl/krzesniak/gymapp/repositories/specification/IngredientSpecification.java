@@ -2,8 +2,7 @@ package pl.krzesniak.gymapp.repositories.specification;
 
 import lombok.AllArgsConstructor;
 import org.springframework.data.jpa.domain.Specification;
-import pl.krzesniak.gymapp.entities.Exercise;
-import pl.krzesniak.gymapp.entities.Ingredient;
+import pl.krzesniak.gymapp.entities.diet.Ingredient;
 import pl.krzesniak.gymapp.repositories.filters.IngredientFilter;
 
 import javax.persistence.criteria.CriteriaBuilder;

@@ -8,8 +8,8 @@ import org.hibernate.annotations.GenericGenerator;
 import javax.persistence.*;
 import java.util.UUID;
 
-@MappedSuperclass
 @Data
+@MappedSuperclass
 @AllArgsConstructor
 @NoArgsConstructor
 public class AbstractDefaultEntity {

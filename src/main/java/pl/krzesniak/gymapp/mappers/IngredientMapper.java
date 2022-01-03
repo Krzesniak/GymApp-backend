@@ -3,8 +3,7 @@ package pl.krzesniak.gymapp.mappers;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import pl.krzesniak.gymapp.dto.meals.IngredientFilterDTO;
-import pl.krzesniak.gymapp.entities.Ingredient;
-import pl.krzesniak.gymapp.repositories.filters.IngredientFilter;
+import pl.krzesniak.gymapp.entities.diet.Ingredient;
 
 @Mapper(config = CentralConfig.class)
 public interface IngredientMapper {

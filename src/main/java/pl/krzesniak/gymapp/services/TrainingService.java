@@ -1,16 +1,15 @@
 package pl.krzesniak.gymapp.services;
 
 import lombok.RequiredArgsConstructor;
-import org.hibernate.cfg.NotYetImplementedException;
 import org.springframework.stereotype.Service;
 import pl.krzesniak.gymapp.dto.TrainingDTO;
 import pl.krzesniak.gymapp.dto.TrainingDetailsDTO;
 import pl.krzesniak.gymapp.dto.exercises.ExerciseSeriesRequestDTO;
 import pl.krzesniak.gymapp.dto.exercises.TrainingRequestDTO;
-import pl.krzesniak.gymapp.entities.Exercise;
-import pl.krzesniak.gymapp.entities.ExerciseInTraining;
-import pl.krzesniak.gymapp.entities.Training;
-import pl.krzesniak.gymapp.entities.User;
+import pl.krzesniak.gymapp.entities.training.Exercise;
+import pl.krzesniak.gymapp.entities.training.ExerciseInTraining;
+import pl.krzesniak.gymapp.entities.training.Training;
+import pl.krzesniak.gymapp.entities.user.User;
 import pl.krzesniak.gymapp.exceptions.NotFoundTrainingException;
 import pl.krzesniak.gymapp.exceptions.NotFoundUserException;
 import pl.krzesniak.gymapp.mappers.TrainingMapper;

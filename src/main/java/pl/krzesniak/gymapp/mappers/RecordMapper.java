@@ -3,8 +3,7 @@ package pl.krzesniak.gymapp.mappers;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import pl.krzesniak.gymapp.dto.RecordExercisesDTO;
-import pl.krzesniak.gymapp.entities.Exercise;
-import pl.krzesniak.gymapp.entities.ExerciseInTraining;
+import pl.krzesniak.gymapp.entities.training.ExerciseInTraining;
 
 import java.util.List;
 import java.util.Map;

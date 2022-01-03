@@ -2,7 +2,7 @@ package pl.krzesniak.gymapp.dietUtil;
 
 import lombok.RequiredArgsConstructor;
 import pl.krzesniak.gymapp.dto.DietSumIngredientsDTO;
-import pl.krzesniak.gymapp.entities.Diet;
+import pl.krzesniak.gymapp.entities.diet.Diet;
 
 @RequiredArgsConstructor
 public class DietIngredientCalculator {

@@ -32,6 +32,15 @@ databaseChangeLog:
               - column:
                   name: DIFFICULTY
                   type: varchar(128)
+              - column:
+                  name: ENABLED
+                  type: BOOLEAN
+              - column:
+                  name: CREATED_BY
+                  type: varchar(128)
+              - column:
+                  name: CREATED_DATE
+                  type: DATE
 
   - changeSet:
       id: 001_add_foreign_key_constraint_meal

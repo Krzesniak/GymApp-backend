@@ -2,8 +2,8 @@ package pl.krzesniak.gymapp.record;
 
 import org.springframework.stereotype.Component;
 import pl.krzesniak.gymapp.dto.records.MaximumRecordsDTO;
-import pl.krzesniak.gymapp.entities.ExerciseInTraining;
-import pl.krzesniak.gymapp.entities.Training;
+import pl.krzesniak.gymapp.entities.training.ExerciseInTraining;
+import pl.krzesniak.gymapp.entities.training.Training;
 
 import java.time.LocalTime;
 import java.util.Comparator;

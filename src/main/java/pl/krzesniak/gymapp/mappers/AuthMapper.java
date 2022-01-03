@@ -4,9 +4,9 @@ import org.mapstruct.*;
 import pl.krzesniak.gymapp.dto.registration.MeasurementDTO;
 import pl.krzesniak.gymapp.dto.registration.PrivateInformationDTO;
 import pl.krzesniak.gymapp.dto.registration.RegistrationRequestDTO;
-import pl.krzesniak.gymapp.entities.User;
-import pl.krzesniak.gymapp.entities.UserMeasurement;
-import pl.krzesniak.gymapp.entities.userdetails.UserInfo;
+import pl.krzesniak.gymapp.entities.user.User;
+import pl.krzesniak.gymapp.entities.user.UserMeasurement;
+import pl.krzesniak.gymapp.entities.user.UserInfo;
 
 @Mapper(config = CentralConfig.class)
 public interface AuthMapper {

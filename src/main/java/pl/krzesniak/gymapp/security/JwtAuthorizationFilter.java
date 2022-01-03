@@ -32,12 +32,12 @@ public class JwtAuthorizationFilter extends OncePerRequestFilter {
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
 
-        if(request.getServletPath().equals("/refresh/token")) {
+        if (request.getServletPath().equals("/refresh/token")) {
             filterChain.doFilter(request, response);
             return;
         }
         String jwt = getJwtFromRequest(request);
-        if (StringUtils.hasText(jwt)){
+        if (StringUtils.hasText(jwt)) {
             try {
                 Claims body = jwtProvider.validateToken(jwt).getBody();
                 String username = body.getSubject();
@@ -48,7 +48,7 @@ public class JwtAuthorizationFilter extends OncePerRequestFilter {
                 UsernamePasswordAuthenticationToken authenticationToken =
                         new UsernamePasswordAuthenticationToken(username, null, authorityList);
                 SecurityContextHolder.getContext().setAuthentication(authenticationToken);
-            } catch (JwtException e){
+            } catch (JwtException e) {
                 response.setHeader("error", e.getMessage());
                 response.setStatus(FORBIDDEN.value());
                 response.setHeader("Access-Control-Allow-Origin", request.getHeader("Origin"));
